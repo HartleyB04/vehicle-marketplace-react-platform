@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Environment
+.env
+.env.local
+
+# Firebase keys
+serviceAccountKey.json
+
+# Build outputs
+backend/dist/
+frontend/build/
+
+# OS Junk
+.DS_Store
+
+# tools 
+seedlistings.js
+TestSeed.jsx
+frontend/src/utils/seedlisting.js

@@ -1,0 +1,73 @@
+.chat-page {
+    display: flex;
+    gap: 16px;
+    height: 90vh;
+}
+
+/* Conversation List - Left */
+.chat-sidebar {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* Messages - Right */
+.chat-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder when no conversation is selected */
+.chat-placeholder {
+    flex: 1;
+    display: flex;
+    padding: 16px;
+    color: #666;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+/* Chat topbar */
+.chat-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+}
+
+.chat-user-email {
+    flex: 1; 
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #054341;
+}
+
+/* Report button */
+.report-btn {
+  background-color: transparent;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 80px;
+  margin-right: 50px;
+}
+
+.report-btn:hover {
+  background-color: #c0392b;
+  color: white;
+  border: transparent;
+}

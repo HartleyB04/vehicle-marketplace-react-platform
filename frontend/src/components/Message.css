@@ -1,0 +1,141 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #a9cac6;
+    padding: 20px;
+    position: relative;
+}
+
+.messages-list {
+    flex: 1 1 auto; 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-right: 4px;
+}
+
+.message-item {
+    display: flex;
+}
+
+.message-item.sent {
+    justify-content: flex-end;
+}
+
+.message-item.received {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 5px 10px;
+    border-radius: 16px;
+    background-color: #d6fffa;
+    position: relative;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    color: #888;
+    display: block;
+    text-align: right;
+    margin-top: 4px;
+}
+
+.sender {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85em;
+    color: #555;
+}
+
+/* Sent messages */
+.message-item.sent .message-bubble .message-text {
+    color: #054341;
+}
+
+.message-item.sent .message-bubble .timestamp {
+    color: #555555;
+}
+
+/* Received messages */
+.message-item.received .message-bubble {
+    background-color: #23867b;
+    color: #ffffff;
+}
+
+.message-item.received .message-bubble .message-text {
+    color: white;
+}
+
+.message-item.received .message-bubble .timestamp {
+    color: #d4d4d4;
+    font-size: 0.7em;
+    text-align: right;
+    margin-top: 4px;
+}
+
+.message-item.received .sender {
+    color: #c9c9c9;
+}
+
+/* Message input */
+.input-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+}
+
+.input-container input {
+    width: 95%;
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+.input-container .send-button {
+    margin-bottom: 0px;
+}
+
+.loading,
+.no-messages {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Suspended behaviour */
+.chat-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+    pointer-events: none;
+}
+
+.overlay-text {
+    font-size: 17px;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+}

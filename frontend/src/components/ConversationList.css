@@ -1,0 +1,42 @@
+.conversations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 500px; /* optional, adjust as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fefefe;
+    overflow: hidden;
+}
+
+.conversation-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.conversation-item:last-child {
+    border-bottom: none; /* remove line for last item */
+}
+
+.conversation-item:hover {
+    background-color: #f0f8ff; /* subtle hover effect */
+}
+
+.conversation-email {
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conversation-updated {
+    font-size: 0.85em;
+    color: #888;
+}

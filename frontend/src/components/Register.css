@@ -1,0 +1,52 @@
+/* Layout container */
+.register-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Left section */
+.register-left {
+    flex: 1;
+    background-color: #7ab0ae;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-box {
+    text-align: center;
+}
+
+.welcome-box h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-box p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.welcome-logo {
+    width: 355px;
+    height: auto;
+    margin: 1rem 0;
+}
+
+/* Right section */
+.register-right {
+    flex: 1;
+    background: linear-gradient(180deg, #f4f5f8 0%, #95b2ae 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form {
+    padding: 3rem 4rem;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}

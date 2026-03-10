@@ -1,0 +1,64 @@
+/* ===== Listing Card (Clean Minimalist Style) ===== */
+.listing-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 340px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.listing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Image with white padding (frame effect) */
+.listing-image {
+    width: calc(100% - 24px);
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin: 12px auto 0 auto; /* centers image within white frame */
+    border-radius: 12px;
+}
+
+.listing-info {
+    padding: 18px 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start; /* ensures perfect left alignment */
+    row-gap: 6px; /* tidy spacing */
+    text-align: left;
+}
+
+.listing-name {
+    font-size: 24px;
+    color: #054341;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+    height: 62px;
+    overflow: hidden;
+}
+
+.listing-location,
+.listing-price {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 0 0 0;
+    text-align: left;
+    font-weight: 400;
+    color: #054341;
+    letter-spacing: normal;
+    transform: translateX(-1px); /* micro-adjusts alignment visually */
+}
+
+.listing-price {
+    color: #000;
+    font-weight: 500;
+}
+
+
+

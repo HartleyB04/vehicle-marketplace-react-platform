@@ -1,0 +1,655 @@
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+}
+
+.profile-info {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.profile-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0rem;
+    padding-bottom: 1rem;
+    border-bottom: none;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    gap: 0; 
+    border-bottom: 2px solid #7ab0ae;
+    margin-bottom: 2rem;
+    box-shadow: none; 
+}
+
+.tab {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #7ab0ae;
+    transition: color 0.3s;
+    margin: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    position: relative; /* For badge positioning */
+}
+
+/* Tab with badge needs relative positioning */
+.tab-with-badge {
+    position: relative;
+    display: inline-block;
+}
+
+.tab:hover {
+    color: #054341;
+    font-weight: 700;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.tab:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    border: none !important;
+}
+
+.tab.active {
+    color: #054341;
+    font-weight: 700;
+    border-bottom: none;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* Notification badge on tabs */
+.tab .notification-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+/* Tab Content Area */
+.tab-content {
+    min-height: 400px;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: #054341;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.section-description {
+    color: #054341;
+    margin-bottom: 1.5rem;
+}
+
+.listings-section h2,
+.requests-section h2,
+.wishlist-section h2 {
+    font-size: 1.8rem;
+    color: #054341;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    text-align: center;
+}
+
+.section-description {
+    color: #054341;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Listings List */
+.listings-section .listings-list,
+.wishlist-section .listings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Override listing-card styles ONLY within profile sections */
+.listings-section .listing-card,
+.wishlist-section .listing-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: white;
+    border: 2px solid #7ab0ae;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: default;
+    box-shadow: none;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.listings-section .listing-card:hover,
+.wishlist-section .listing-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.listings-section .listing-card-header,
+.wishlist-section .listing-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.available {
+    background-color: rgba(122, 176, 174, 0.3);
+    color: #054341;
+}
+
+.status-badge.sold,
+.status-badge.swapped {
+    background-color: rgba(211, 47, 47, 0.1);
+    color: #d32f2f;
+}
+
+.listings-section .listing-card-price,
+.wishlist-section .listing-card-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #7ab0ae;
+    margin: 0;
+    padding: 0;
+}
+
+.listings-section .listing-card-body,
+.wishlist-section .listing-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.listings-section .listing-card-left,
+.wishlist-section .listing-card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.listings-section .listing-card-image,
+.wishlist-section .listing-card-image {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.listings-section .listing-card-location,
+.wishlist-section .listing-card-location {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    padding: 0;
+    max-width: 150px;
+}
+
+.listings-section .listing-card-right,
+.wishlist-section .listing-card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.listings-section .listing-card-name,
+.wishlist-section .listing-card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #054341;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+}
+
+.listings-section .listing-card-actions,
+.wishlist-section .listing-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* No gap between buttons */
+    justify-content: flex-start;
+    align-self: flex-end;
+}
+
+.listings-section .listing-card-actions button,
+.wishlist-section .listing-card-actions button {
+    padding: 0.75rem 2rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    background-color: #054341;
+    color: white;
+    margin: 0;
+}
+
+
+.listings-section .listing-card-actions button:not(:first-child),
+.wishlist-section .listing-card-actions button:not(:first-child) {
+    margin-top: 0.5rem; /* control spacing between buttons */
+}
+
+.listings-section .view-btn,
+.wishlist-section .view-btn {
+    background-color: #054341;
+    color: white;
+}
+
+.listings-section .view-btn:hover,
+.wishlist-section .view-btn:hover {
+    background-color: #6ca39f;
+    border: 2px solid #054341;
+}
+
+.listings-section .delete-btn,
+.listings-section .remove-btn,
+.wishlist-section .delete-btn,
+.wishlist-section .remove-btn {
+    background-color: #054341;
+    color: white;
+}
+
+.listings-section .delete-btn:hover,
+.listings-section .remove-btn:hover,
+.wishlist-section .delete-btn:hover,
+.wishlist-section .remove-btn:hover {
+    background-color: #6ca39f;
+    border: 2px solid #054341;
+}
+
+/* Requests Lists (for Received/Sent Requests tabs) */
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.request-item {
+    width: 100%;
+    background-color: white;
+    border: 2px solid #7ab0ae;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #7ab0ae;
+}
+
+.request-type {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: rgba(122, 176, 174, 0.3);
+    color: #054341;
+}
+
+.request-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.request-status.pending {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #f57c00;
+}
+
+.request-status.accepted {
+    background-color: rgba(122, 176, 174, 0.3);
+    color: #054341;
+}
+
+.request-status.rejected {
+    background-color: rgba(211, 47, 47, 0.1);
+    color: #d32f2f;
+}
+
+.request-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.request-listing h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #7ab0ae;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.mini-listing {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(122, 176, 174, 0.1);
+    border-radius: 8px;
+}
+
+.mini-listing img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.mini-listing > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mini-listing .listing-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #054341;
+    margin: 0;
+    padding: 0;
+}
+
+.mini-listing .listing-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #7ab0ae;
+    margin: 0;
+    padding: 0;
+}
+
+.request-message {
+    background-color: rgba(122, 176, 174, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #054341;
+}
+
+.request-message h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #7ab0ae;
+    margin: 0 0 0.5rem 0;
+}
+
+.request-message p {
+    color: #054341;
+    margin: 0;
+}
+
+.contact-info-display {
+    background-color: rgba(122, 176, 174, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #054341;
+}
+
+.contact-info-display h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #054341;
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-info-display p {
+    margin: 0.25rem 0;
+    color: #054341;
+}
+
+.request-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #7ab0ae;
+}
+
+.request-actions button {
+    padding: 0.75rem 2rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.reject-btn,
+.cancel-btn,
+.accept-btn,
+.confirm-btn {
+    background-color: #7ab0ae;
+    color: white;
+    flex: 1;
+}
+
+.reject-btn:hover,
+.cancel-btn:hover,
+.accept-btn:hover,
+.confirm-btn:hover {
+    background-color: #054341;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 45, 44, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 30px rgba(1, 45, 44, 0.3);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #054341;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #054341;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #7ab0ae;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #054341;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.cancel-modal-btn {
+    background-color: #7ab0ae;
+    color: white;
+}
+
+.cancel-modal-btn:hover {
+    background-color: #054341;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #054341;
+    padding: 3rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .profile-header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .tabs {
+        overflow-x: auto;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .request-actions {
+        flex-direction: column;
+    }
+
+    .mini-listing {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .listings-section .listing-card-body,
+    .wishlist-section .listing-card-body {
+        flex-direction: column;
+    }
+
+    .listings-section .listing-card-left,
+    .wishlist-section .listing-card-left {
+        align-items: center;
+    }
+
+    .listings-section .listing-card-image,
+    .wishlist-section .listing-card-image {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .listings-section .listing-card-location,
+    .wishlist-section .listing-card-location {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .listings-section .listing-card-actions,
+    .wishlist-section .listing-card-actions {
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    .listings-section .listing-card-actions button,
+    .wishlist-section .listing-card-actions button {
+        flex: 1;
+    }
+}
